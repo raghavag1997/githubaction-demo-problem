@@ -1,5 +1,7 @@
-name: 2 Worklow
-on: workflow_dispatch
+name: 2 Workflow
+on:  
+  issues:
+    types: [opened, edited, milestoned]
 jobs:
   TestJob:
     runs-on: ubuntu-latest
