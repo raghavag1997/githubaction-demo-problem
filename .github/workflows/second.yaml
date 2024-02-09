@@ -1,0 +1,8 @@
+name: 2 Worklow
+on: workflow_dispatch
+jobs:
+  TestJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Context
+        run: echo "{{ toJSON(github) }}"
