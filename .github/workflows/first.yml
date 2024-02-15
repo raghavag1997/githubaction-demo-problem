@@ -30,5 +30,10 @@ jobs:
          run: npm run build
        - name: showing file structure
          run: ls
-
+       - name: Uploading Artificats
+         uses: actions/upload-artifact@v4
+         with:
+          name: My-Artifacts
+          path: |
+            dist
         
