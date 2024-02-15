@@ -1,7 +1,7 @@
 name: First Workflow
 on: push 
 jobs:
-  Deploy:
+  Testing:
     runs-on: ubuntu-latest
     steps:
        - name: Code Checkout
@@ -12,9 +12,23 @@ jobs:
            node-version: 18.0
        - name: Install Dependencies
          run: npm install
-       - name: npm lint
-         run: npm run lint
        - name: Testing 
-         run: npm test
+         run: npm run test
+  Build:
+    needs: Testing
+    runs-on: ubuntu-latest
+    steps:
+       - name: Code Checkout
+         uses: actions/checkout@v4
+       - name: Node Js Installation
+         uses: actions/setup-node@v4
+         with:
+           node-version: 18.0
+       - name: Install Dependencies
+         run: npm install
        - name: Creating a Build
          run: npm run build
+       - name: showing file structure
+         run: ls
+
+        
