@@ -3,6 +3,12 @@ on: push
 env:
   name: "raghav"
 jobs:
+  Testingenv:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+    - name: Printing Env Variable
+      runs: echo "${{ secrets.NAME }}"
   Testing:
     runs-on: ubuntu-latest
     steps:
