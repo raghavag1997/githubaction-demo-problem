@@ -8,7 +8,7 @@ jobs:
     environment: Dev
     steps:
     - name: Printing Env Variable
-      runs: echo "${{ secrets.NAME }}"
+      run: echo "${{ secrets.NAME }}"
   Testing:
     runs-on: ubuntu-latest
     steps:
