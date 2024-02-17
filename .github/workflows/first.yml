@@ -18,6 +18,8 @@ jobs:
          run: npm run test
        - name: Just printing
          run: echo $name 
+       - name: Printing Secret
+         run: echo $PASSWORD
   Build:
     needs: Testing
     runs-on: ubuntu-latest
